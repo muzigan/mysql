@@ -1,4 +1,7 @@
-helm install  mysql -n ${NAMESPACE} --set imagePullSecrets[0].name=alihangzhou,mysqlAllowEmptyPassword=true,mysqlRootHost=%,persistence.storageClass=ceph-storage-class,persistence.size=50Gi,resources.limits.memory=3Gi,resources.limits.cpu="1",resources.requests.memory=1Gi,resources.requests.cpu="500m"   ./mysql
+helm install  mysql -n ${NAMESPACE}  \
+--set imagePullSecrets[0].name=alihangzhou,mysqlAllowEmptyPassword=true,\
+mysqlRootHost=%,persistence.storageClass=ceph-storage-class,persistence.size=50Gi,\
+resources.limits.memory=3Gi,resources.limits.cpu="1",resources.requests.memory=1Gi,resources.requests.cpu="500m" ./mysql
 
 指定 密码允许为空，指定host为%或localhost，不指定密码
 
